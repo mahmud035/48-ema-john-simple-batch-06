@@ -28,6 +28,7 @@
 
 .product-price {
   margin-top: 0;
+  font-weight: 500;
 }
 
 .product-info p:nth-child(3) {
@@ -48,4 +49,9 @@
 
 .btn-cart:hover {
   background-color: orange;
+}
+
+.shopping-cart-icon {
+  margin-left: 10px;
+  font-size: 15px;
 }

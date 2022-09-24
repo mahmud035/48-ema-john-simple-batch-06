@@ -4,9 +4,11 @@
 }
 
 .product-container {
+  max-width: 85%;
+  margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-  gap: 1.5rem;
-  padding-top: 3rem;
+  gap: 2rem;
+  padding-top: 6rem;
 }
