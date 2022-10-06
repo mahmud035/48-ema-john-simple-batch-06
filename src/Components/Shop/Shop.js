@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import {
   addToDb,
   deleteShoppingCart,
@@ -64,7 +64,11 @@ const Shop = () => {
       </div>
 
       <div className="cart-container">
-        <Cart cart={cart} handleClearCart={handleClearCart}></Cart>
+        <Cart cart={cart} handleClearCart={handleClearCart}>
+          <Link to="/orders">
+            <button className="btn-review-order">Review Order</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );
