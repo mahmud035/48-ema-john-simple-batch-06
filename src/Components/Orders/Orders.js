@@ -7,7 +7,7 @@ import './Orders.css';
 
 const Orders = () => {
   //* { products: products, initialCart: initialCart }
-  const { products, initialCart } = useLoaderData();
+  const { initialCart } = useLoaderData();
   const [cart, setCart] = useState(initialCart);
 
   const handleRemoveItem = (id) => {
