@@ -1,0 +1,13 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-page p:nth-child(3) {
+  color: red;
+  font-weight: 600;
+  font-size: 20px;
+}

@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Inventory from './Components/Inventory/Inventory';
 import Orders from './Components/Orders/Orders';
 import Shop from './Components/Shop/Shop';
@@ -11,6 +12,7 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
