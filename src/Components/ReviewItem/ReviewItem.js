@@ -2,9 +2,9 @@ import React from 'react';
 import './ReviewItem.css';
 import { MdDeleteForever } from 'react-icons/md';
 
-const ReviewItem = ({ product }) => {
-  console.log(product);
-  const { name, price, quantity, img } = product;
+const ReviewItem = ({ product, handleRemoveItem }) => {
+  // console.log(product);
+  const { name, price, quantity, img, id } = product;
 
   return (
     <div className="review-item">
@@ -20,7 +20,11 @@ const ReviewItem = ({ product }) => {
           </p>
         </div>
         <div className="delete-button">
-          <MdDeleteForever size={40} className="delete-icon" />
+          <MdDeleteForever
+            onClick={() => handleRemoveItem(id)}
+            size={40}
+            className="delete-icon"
+          />
         </div>
       </div>
     </div>
