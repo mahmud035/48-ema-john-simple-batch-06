@@ -1,7 +1,7 @@
 .review-item {
   display: flex;
   gap: 1.5rem;
-  width: 500px;
+  width: 570px;
   border: 1px solid sandybrown;
   border-radius: 5px;
   padding: 5px;
@@ -36,6 +36,10 @@
 }
 
 .delete-icon {
-  color: red;
+  color: #eb1d36;
   cursor: pointer;
+  background-color: rgba(235, 87, 87, 0.3);
+  border-radius: 50%;
+  padding: 5px 1px;
+  margin-right: 12px;
 }

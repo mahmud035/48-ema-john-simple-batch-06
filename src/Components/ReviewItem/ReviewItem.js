@@ -20,7 +20,7 @@ const ReviewItem = ({ product }) => {
           </p>
         </div>
         <div className="delete-button">
-          <MdDeleteForever size={32} className="delete-icon" />
+          <MdDeleteForever size={40} className="delete-icon" />
         </div>
       </div>
     </div>
