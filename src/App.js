@@ -3,8 +3,10 @@ import './App.css';
 import About from './Components/About/About';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Inventory from './Components/Inventory/Inventory';
+import Login from './Components/Login/Login';
 import Orders from './Components/Orders/Orders';
 import Shop from './Components/Shop/Shop';
+import SignUp from './Components/SignUp/SignUp';
 import Main from './Layouts/Main';
 import { productsAndCartLoader } from './Loaders/productsAndCartLoader';
 
@@ -41,6 +43,14 @@ function App() {
         {
           path: '/about',
           element: <About></About>,
+        },
+        {
+          path: '/login',
+          element: <Login></Login>,
+        },
+        {
+          path: '/signup',
+          element: <SignUp></SignUp>,
         },
       ],
     },
