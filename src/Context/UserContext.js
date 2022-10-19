@@ -17,16 +17,19 @@ const UserContext = ({ children }) => {
 
   //* 1. Create User
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //* 2. Login
   const login = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //* 3. LogOut
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
