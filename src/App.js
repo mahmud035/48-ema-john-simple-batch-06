@@ -5,6 +5,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import Orders from './Components/Orders/Orders';
+import Shipping from './Components/Shipping/Shipping';
 import Shop from './Components/Shop/Shop';
 import SignUp from './Components/SignUp/SignUp';
 import Main from './Layouts/Main';
@@ -33,16 +34,21 @@ function App() {
         {
           path: '/orders',
           loader: () => productsAndCartLoader(),
-          element: (
-            <PrivateRoutes>
-              <Orders></Orders>
-            </PrivateRoutes>
-          ),
+          element: <Orders></Orders>,
         },
 
         {
           path: '/inventory',
           element: <Inventory></Inventory>,
+        },
+
+        {
+          path: '/shipping',
+          element: (
+            <PrivateRoutes>
+              <Shipping></Shipping>
+            </PrivateRoutes>
+          ),
         },
 
         {
