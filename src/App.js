@@ -9,6 +9,7 @@ import Shop from './Components/Shop/Shop';
 import SignUp from './Components/SignUp/SignUp';
 import Main from './Layouts/Main';
 import { productsAndCartLoader } from './Loaders/productsAndCartLoader';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +33,11 @@ function App() {
         {
           path: '/orders',
           loader: () => productsAndCartLoader(),
-          element: <Orders></Orders>,
+          element: (
+            <PrivateRoutes>
+              <Orders></Orders>
+            </PrivateRoutes>
+          ),
         },
 
         {
