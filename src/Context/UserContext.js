@@ -25,19 +25,19 @@ const UserContext = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // 3. LogOut
+  //* 3. LogOut
   const logOut = () => {
     return signOut(auth);
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
 
     return () => {
-      unsubscribe();
+      unSubscribe();
     };
   }, []);
 

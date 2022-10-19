@@ -34,7 +34,7 @@ const Header = () => {
           <NavLink to="/inventory">Inventory</NavLink>
           <NavLink to="/about">About</NavLink>
 
-          {user && user.email ? (
+          {user && user?.uid ? (
             <NavLink onClick={handleLogOut} to="/login">
               Log Out
             </NavLink>
