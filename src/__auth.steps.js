@@ -10,3 +10,15 @@
 6. export app from firebase.config.js
 
 */
+
+/* 
+1. Create UserContext (Auth Context): UserContext --> component name
+UserContext provides AuthContext variable.
+2. Create AuthContext variable
+3. set AuthContext.Provider
+4. Make sure you set the children
+5. export AuthContext variable
+6. get form data
+7. getAuth in the UserContext
+
+*/
