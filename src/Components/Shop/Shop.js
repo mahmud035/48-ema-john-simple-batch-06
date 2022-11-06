@@ -94,7 +94,7 @@ const Shop = () => {
           <button
             key={index}
             onClick={() => setCurrentPage(pageNumber)}
-            className={currentPage === pageNumber && 'selected '}
+            className={currentPage === pageNumber ? 'selected' : undefined}
           >
             {pageNumber}
           </button>
