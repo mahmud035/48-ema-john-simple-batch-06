@@ -32,7 +32,7 @@ const Shop = () => {
   useEffect(() => {
     const url = `http://localhost:5000/products?currentPage=${currentPage}&perPageItem=${perPageItem}`;
 
-    console.log(currentPage, perPageItem);
+    // console.log(currentPage, perPageItem);
 
     fetch(url)
       .then((res) => res.json())
@@ -101,6 +101,7 @@ const Shop = () => {
         </Cart>
       </div>
 
+      {/* Pagination */}
       <div className="pagination">
         <p>
           Currently selected page: {currentPage} and per Page Item:
@@ -113,7 +114,7 @@ const Shop = () => {
             onClick={() => setCurrentPage(pageNumber)}
             className={currentPage === pageNumber ? 'selected' : undefined}
           >
-            {pageNumber}
+            {pageNumber + 1}
           </button>
         ))}
 
