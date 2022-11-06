@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   addToDb,
   deleteShoppingCart,
@@ -21,12 +21,26 @@ currentPage:
 */
 
 const Shop = () => {
-  const { count, products } = useLoaderData();
+  const [products, setProducts] = useState([]);
+  const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [perPageItem, setPerPageItem] = useState(10);
 
   const numberOfPages = Math.ceil(count / perPageItem);
+
+  useEffect(() => {
+    const url = `http://localhost:5000/products?currentPage=${currentPage}&perPageItem=${perPageItem}`;
+
+    console.log(currentPage, perPageItem);
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setCount(data?.count);
+        setProducts(data?.products);
+      });
+  }, [currentPage, perPageItem]);
 
   const handleClearCart = () => {
     setCart([]);
@@ -88,7 +102,10 @@ const Shop = () => {
       </div>
 
       <div className="pagination">
-        <p>Currently selected page: {currentPage}</p>
+        <p>
+          Currently selected page: {currentPage} and per Page Item:
+          {perPageItem}
+        </p>
 
         {[...Array(numberOfPages).keys()].map((index, pageNumber) => (
           <button
@@ -99,6 +116,16 @@ const Shop = () => {
             {pageNumber}
           </button>
         ))}
+
+        <select onChange={(e) => setPerPageItem(e.target.value)}>
+          <option value="5">5</option>
+          <option value="10" selected>
+            10
+          </option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
       </div>
     </div>
   );
