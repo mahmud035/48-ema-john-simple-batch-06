@@ -4,7 +4,7 @@ import { MdDeleteForever } from 'react-icons/md';
 
 const ReviewItem = ({ product, handleRemoveItem }) => {
   // console.log(product);
-  const { name, price, quantity, img, id } = product;
+  const { name, price, quantity, img, _id } = product;
 
   return (
     <div className="review-item">
@@ -21,7 +21,7 @@ const ReviewItem = ({ product, handleRemoveItem }) => {
         </div>
         <div className="delete-button">
           <MdDeleteForever
-            onClick={() => handleRemoveItem(id)}
+            onClick={() => handleRemoveItem(_id)}
             size={40}
             className="delete-icon"
           />
