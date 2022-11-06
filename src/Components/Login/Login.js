@@ -12,6 +12,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (e) => {
+    /* It prevents the default action of the form from happening. */
     e.preventDefault();
 
     const form = e.target;

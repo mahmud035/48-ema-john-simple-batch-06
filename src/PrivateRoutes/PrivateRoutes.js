@@ -7,6 +7,7 @@ const PrivateRoutes = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
+    console.log('Yes Loading found');
     return <div>Loading...</div>;
   }
 
