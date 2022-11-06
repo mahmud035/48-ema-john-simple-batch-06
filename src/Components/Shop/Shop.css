@@ -17,6 +17,23 @@
   background-color: #ff99004d;
 }
 
+.pagination {
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.pagination button {
+  margin-right: 10px;
+}
+
+.pagination .selected {
+  background-color: goldenrod;
+  border: gold;
+  font-weight: bold;
+  width: 30px;
+  padding: 8px;
+}
+
 .btn-review-order {
   width: 100%;
   margin-top: 10px;

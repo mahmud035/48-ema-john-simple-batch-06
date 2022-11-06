@@ -10,9 +10,23 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 
+/* 
+//* Needed:
+
+count(Total Data): loaded from server
+perPageItem: 10 (assumed)
+numberOfPages: (count / perPageItem)
+currentPage: 
+
+*/
+
 const Shop = () => {
-  const products = useLoaderData();
+  const { count, products } = useLoaderData();
   const [cart, setCart] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [perPageItem, setPerPageItem] = useState(10);
+
+  const numberOfPages = Math.ceil(count / perPageItem);
 
   const handleClearCart = () => {
     setCart([]);
@@ -71,6 +85,20 @@ const Shop = () => {
             <button className="btn-review-order">Review Order</button>
           </Link>
         </Cart>
+      </div>
+
+      <div className="pagination">
+        <p>Currently selected page: {currentPage}</p>
+
+        {[...Array(numberOfPages).keys()].map((index, pageNumber) => (
+          <button
+            key={index}
+            onClick={() => setCurrentPage(pageNumber)}
+            className={currentPage === pageNumber && 'selected '}
+          >
+            {pageNumber}
+          </button>
+        ))}
       </div>
     </div>
   );
